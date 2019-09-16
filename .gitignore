@@ -1,0 +1,8 @@
+*.o
+*.a
+gen_tables
+chacha20_tests
+chacha20_whitebox_tests
+chacha20_tables.c
+
+.*.sw[po]
