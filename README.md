@@ -30,3 +30,6 @@ The final unit test compares the output of the generated function with the origi
 
 In order to decrypt, run the function a second time, using the ciphertext as the input, maintaining the same nonce used to encrypt.
 
+## Security
+
+The security offered by this form of WBC is under evaluation, thus, use it with caution.
