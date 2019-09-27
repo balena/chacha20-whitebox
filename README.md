@@ -1,6 +1,6 @@
 # ChaCha20 whitebox cryptography
 
-This code contains an implementation of the ChaCha20 stream cipher, designed by Daniel J Bernstein and a part of the eSTREAM stream cipher portfolio, RFC 7539 variant (nonce = 96 bits, counter = 32 bits). It is a simple non-optimized version of the specification with focus on testability only.
+This code contains a simple implementation of the ChaCha20 stream cipher, designed by Daniel J Bernstein and a part of the eSTREAM stream cipher portfolio, RFC 7539 variant (nonce = 96 bits, counter = 32 bits). It is a simple non-optimized version of the specification with focus on testability.
 
 It requires a minimal set of C and no special external libraries.
 
@@ -32,4 +32,6 @@ In order to decrypt, run the function a second time, using the ciphertext as the
 
 ## Security
 
-The security offered by this form of WBC is under evaluation, thus, use it with caution.
+The current implementation is not secure at all as the nonce length is too short (only 16 bits), so an attacker can break the ciphertext in time 2^16 and very low memory resources.
+
+Notice that the key is not easily extractable from the tables, by the way.

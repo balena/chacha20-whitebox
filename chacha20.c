@@ -22,7 +22,7 @@ static const uint8_t sigma[16] = { 'e', 'x', 'p', 'a', 'n', 'd', ' ', '3',
   }
 
 /* QUARTERROUND updates a, b, c, d with a ChaCha "quarter" round. */
-#define QUARTERROUND(a, b, c, d)                \
+#define QUARTERROUND(a, b, c, d) \
   a += b; d = ROTATE(d ^ a, 16); \
   c += d; b = ROTATE(b ^ c, 12); \
   a += b; d = ROTATE(d ^ a,  8); \
@@ -34,6 +34,7 @@ void chacha20_core_qr(uint32_t x[16]) {
     QUARTERROUND(x[1], x[5], x[ 9], x[13])
     QUARTERROUND(x[2], x[6], x[10], x[14])
     QUARTERROUND(x[3], x[7], x[11], x[15])
+
     QUARTERROUND(x[0], x[5], x[10], x[15])
     QUARTERROUND(x[1], x[6], x[11], x[12])
     QUARTERROUND(x[2], x[7], x[ 8], x[13])
